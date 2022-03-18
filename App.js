@@ -15,13 +15,13 @@ function App() {
 
   //sort data in both ways
   const sortByNameAscending = () => {
-    const sorted = [...countries].sort((b, a) => {
+    const sorted = [...filterParameter].sort((b, a) => {
       return a.name.localeCompare(b.name);
     });
     setFilterParameter(sorted);
   }
   const sortByNameDescending = () => {
-    const sorted = [...countries].sort((a, b) => {
+    const sorted = [...filterParameter].sort((a, b) => {
       return a.name.localeCompare(b.name);
     });
     setFilterParameter(sorted);
@@ -50,12 +50,15 @@ function App() {
 
    return (
      <div className="allContent">
-       <div className="filter-sort">
+       <div className="filter">
           <button value="All" id="filtering" onClick={handleBtns} className="btn">All</button>
           <button value="Oceania" id="filtering" onClick={handleBtns} className="btn">Oceania</button>
           <button value="Smaller" id="filtering" onClick={handleBtns} className="btn">Smaller than Lithuania</button>   
+          <div className="sort">
           <button id="sort" onClick={sortByNameAscending} className="btn" >Sort Z-A</button>
           <button id="sort" onClick={sortByNameDescending}className="btn" >Sort A-Z</button>
+          </div>
+          
         </div>
         
        <div className="displayList">
