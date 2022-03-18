@@ -1,11 +1,17 @@
 import React, { useEffect, useState } from "react";
-
+import ReactPaginate from "react-paginate";
 
 function App() {
   const [countries, setCountries] = useState([]);
   const [filterParameter, setFilterParameter] = useState(countries);
+  const [currentPage, setCurrentPage] = useState(0);
 
   const URL = "https://restcountries.com/v2/all?fields=name,region,area";
+
+  const PER_PAGE = 10;
+  const offset = currentPage * PER_PAGE;
+
+  const pageCount = Math.ceil(filterParameter.length / PER_PAGE);
 
   useEffect(() => {
     fetch(URL).then((res) => res.json()).then((result) => {
@@ -45,6 +51,10 @@ function App() {
     }
   }
 
+  function handlePageClick({ selected: selectedPage }) {
+    setCurrentPage(selectedPage);
+}
+
    return (
      <div className="allContent">
        <div className="filter">
@@ -54,21 +64,31 @@ function App() {
       
           <button id="sort" onClick={sortByNameAscending} className="btn" >Sort Z-A</button>
           <button id="sort" onClick={sortByNameDescending}className="btn" >Sort A-Z</button>
-          
         </div>
         
        <div className="displayList">
           <ul className="card-grid">
-              {filterParameter.map((item) => (
-                  <li key={item.name}>
-                    <h1>{item.name}</h1>
-                    <h3>Region: {item.region}</h3> 
-                    <p>Area: {item.area}km²</p>          
-                  </li>
-                  
-                ))}
+                <ReactPaginate 
+                previousLabel={"← Previous"}
+                nextLabel={"Next →"}
+                pageCount={pageCount}
+                onPageChange={handlePageClick}
+                className="pagination"
+                />
+                {
+                    filterParameter.slice(offset, offset + PER_PAGE).map((item) => (
+                      <li key={item.name}>
+                        <h1>{item.name}</h1>
+                        <h3>Region: {item.region}</h3> 
+                        <p>Area: {item.area}km²</p>          
+                      </li>
+                      
+                    ))
+                }
+                
           </ul>
        </div>
+       
      </div>
       
   );

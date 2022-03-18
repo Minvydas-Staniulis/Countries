@@ -20,7 +20,7 @@ li {
   margin: 50px;
   list-style-type: none;
   color: black;
-  background-color: #86dd86;
+  border-color: black;
   transition: 1s;
 }
 
@@ -58,4 +58,42 @@ li:hover {
 
 .filter:hover {
   padding-top: 10px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin-top: 20px;
+  padding: 0;
+  bottom: 0;
+}
+
+.pagination a {
+  background-color: #000000;
+  cursor: default;
+  padding: 10px;
+  color: #ffffff;
+  margin-left: 10px;
+  border-radius: 20%;
+}
+
+.pagination li:not(.disabled) a:hover {
+  background-color: rgb(92, 92, 92);
+  cursor: pointer;
+}
+
+.pagination li a {
+  font-weight: bold;
+}
+
+.pagination li.active a {
+  color: #fff;
+  background: #32992f;
+}
+
+.pagination li.disabled a {
+  pointer-events: none;
+  color: rgb(198, 197, 202);
+  border: 1px solid rgb(198, 197, 202);
 }
