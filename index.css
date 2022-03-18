@@ -61,8 +61,8 @@ li:hover {
 }
 
 .pagination {
-  display: flex;
-  justify-content: space-between;
+  display: inline;
+  justify-content: center;
   list-style: none;
   margin-top: 20px;
   padding: 0;
@@ -74,8 +74,8 @@ li:hover {
   cursor: default;
   padding: 10px;
   color: #ffffff;
-  margin-left: 10px;
   border-radius: 20%;
+  float: left;
 }
 
 .pagination li:not(.disabled) a:hover {
@@ -90,10 +90,4 @@ li:hover {
 .pagination li.active a {
   color: #fff;
   background: #32992f;
-}
-
-.pagination li.disabled a {
-  pointer-events: none;
-  color: rgb(198, 197, 202);
-  border: 1px solid rgb(198, 197, 202);
 }
