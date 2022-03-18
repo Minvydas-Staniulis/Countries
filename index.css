@@ -20,12 +20,17 @@ li {
   margin: 50px;
   list-style-type: none;
   color: black;
-  border-color: black;
   transition: 1s;
 }
 
 li:hover {
-  background-color: #91ee91;
+  background-color: #85dd85;
+  border-radius: 3%;
+  font-size: larger;
+}
+
+.listContent {
+  background-color: #9afa9a;
 }
 
 .filter {
@@ -48,8 +53,8 @@ li:hover {
 
 .btn:hover {
   padding: 20px 35px;
-  background-color: #38a138;
-  color: black;
+  background: linear-gradient(180deg, #0057b7 50%, #ffdd00 50%);
+  color: white;
 }
 .btn:active {
   background-color: #257c25;

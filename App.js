@@ -79,7 +79,7 @@ function App() {
                 <br></br>
                 {
                     filterParameter.slice(offset, offset + PER_PAGE).map((item) => (
-                      <li key={item.name}>
+                      <li className='listContent' key={item.name}>
                         <h1>{item.name}</h1>
                         <h3>Region: {item.region}</h3> 
                         <p>Area: {item.area}km²</p>          
