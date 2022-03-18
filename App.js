@@ -34,17 +34,14 @@ function App() {
 
     if(filterValue === 'All') {
       setFilterParameter(countries);
-      console.log(countries);
     }
     else if(filterValue === 'Oceania') {
       const filtered = countries.filter(item => item.region === 'Oceania');
       setFilterParameter(filtered);
-      console.log(filtered);
     }
     else if(filterValue === 'Smaller') {
       const filtered = countries.filter(item => item.area < 65300.0);
       setFilterParameter(filtered);
-      console.log(filtered);
     }
   }
 
@@ -54,10 +51,9 @@ function App() {
           <button value="All" id="filtering" onClick={handleBtns} className="btn">All</button>
           <button value="Oceania" id="filtering" onClick={handleBtns} className="btn">Oceania</button>
           <button value="Smaller" id="filtering" onClick={handleBtns} className="btn">Smaller than Lithuania</button>   
-          <div className="sort">
+      
           <button id="sort" onClick={sortByNameAscending} className="btn" >Sort Z-A</button>
           <button id="sort" onClick={sortByNameDescending}className="btn" >Sort A-Z</button>
-          </div>
           
         </div>
         

@@ -21,23 +21,41 @@ li {
   list-style-type: none;
   color: black;
   background-color: #86dd86;
+  transition: 1s;
 }
 
-.filter-sort {
-  margin: 50px;
+li:hover {
+  background-color: #91ee91;
+}
+
+.filter {
+  display: flex;
+  background-color: #333;
+  justify-content: center;
+  align-items: center;
+  transition: 1s;
 }
 
 .btn {
-  display: inline-block;
   padding: 15px 30px;
-  background-color: #5cd45c;
   border-style: none;
   border-radius: 10%;
+  background-color: #333;
+  text-align: center;
+  color: white;
+  transition: 1s;
 }
 
 .btn:hover {
+  padding: 20px 35px;
   background-color: #38a138;
+  color: black;
 }
 .btn:active {
   background-color: #257c25;
+  color: black;
+}
+
+.filter:hover {
+  padding-top: 10px;
 }
